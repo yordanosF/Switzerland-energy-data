@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switzerland Energy Data</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="h1">Switzerland Energy Data</h1>
+        <button id="themeToggle">Dark-Light</button>
+    </header>
+
+    <nav>
+        <form class="filter-row">
+            <label for="yearSelect">Year:</label>
+            <select id="yearSelect"></select>
+            <label for="categorySelect">Category:</label>
+            <select id="categorySelect"></select>
+        </form>
+        <div class="carrier-menu-row">
+            <button id="carrierMenuToggle" aria-label="Show carriers" class="hamburger-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <span id="carrierMenuLabel" class="carrier-menu-label">Carriers</span>
+        </div>
+        <div id="carrierButtons"></div>
+    </nav>
+
+    <main>
+        <section id="chartSection">
+            <h2>Consumption Trend (by Selected Carrier)</h2>
+            <canvas id="trendChart"></canvas>
+        </section>
+
+        <section id="kpiSection">
+            <div class="kpi-card">Gross Consumption: <span id="grossConsumption">--</span></div>
+            <div class="kpi-card">End Consumption: <span id="endConsumption">--</span></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Energy Data</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
